@@ -84,6 +84,50 @@ $honorTexto = $cuadroHonor ? "Sí" : "No";
 // ---------- EJERCICIO 3 · Día de la semana (switch) ----------
 // TODO 3
  
+switch ($dia) {
+    case 1:
+        $nombreDia = "Lunes";
+        break;
+    case 2:
+        $nombreDia = "Martes";
+        break;
+    case 3:
+        $nombreDia = "Miércoles";
+        break;
+    case 4:
+        $nombreDia = "Jueves";
+        break;
+    case 5:
+        $nombreDia = "Viernes";
+        break;
+    case 6:
+        $nombreDia = "Sábado";
+        break;
+    case 7:
+        $nombreDia = "Domingo";
+        break;
+    default:
+        $nombreDia = "Día inválido";
+        break;
+}
+
+switch ($dia) {
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+        $tipoDia = "Laboral";
+        break;
+    case 6:
+    case 7:
+        $tipoDia = "Fin de semana";
+        break;
+    default:
+        $tipoDia = "No válido";
+        break;
+}
+
 // ---------- EJERCICIO 4 · Mes y estación (match) ----------
 // TODO 4
  
@@ -167,7 +211,12 @@ $honorTexto = $cuadroHonor ? "Sí" : "No";
 
     <section id="ej3">
       <h2>Ejercicio 3 · Día de la semana</h2>
-      <p id="ej3-res"><!-- TODO 3 --></p>
+      
+<p id="ej3-res">
+    Día: <?php echo $nombreDia; ?> |
+    Tipo: <?php echo $tipoDia; ?>
+</p>
+
     </section>
 
     <section id="ej4">
