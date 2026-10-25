@@ -183,6 +183,7 @@ if ($recargoNoche) {
 $total = $base + ($base * ITBMS);
 
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -190,15 +191,27 @@ $total = $base + ($base * ITBMS);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="lab9-huella" content="<?php echo $huella; ?>">
   <title>Lab 9 · Estructuras de control</title>
-  <!-- TODO CSS-1: enlaza css/estilos.css (CSS externo) -->
-  <!-- TODO CSS-2: agrega un <style> interno con al menos 2 reglas -->
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="css/estilos.css">
+
+  <!-- CSS interno: mínimo 2 reglas -->
+  <style>
+    h2 {
+      margin-top: 16px;
+    }
+
+    .resultado {
+      border: 1px solid #ddd;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <!-- TODO CSS-3: agrega un atributo style (CSS en línea) a este h1 -->
-    <h1>Laboratorio #9 · Estructuras de control</h1>
+    <h1 style="color: #ffffff;">Laboratorio #9 · Estructuras de control</h1>
     <p id="autor">Autor: <?php echo $nombreCompleto; ?></p>
   </header>
+
 
   <main id="lab9-garcia">
   
@@ -248,14 +261,13 @@ $total = $base + ($base * ITBMS);
     <section id="ej2">
       <h2>Ejercicio 2 · Notas</h2>
       
-<p id="ej2-res">
+<p id="ej2-res" class="resultado <?php echo $promedio >= 70 ? 'ok' : 'error'; ?>">
     Promedio: <?php echo number_format($promedio, 2); ?> |
     Letra: <?php echo $letra; ?> |
     Estado: <?php echo $estado; ?> |
     Cuadro de honor: <?php echo $honorTexto; ?>
 </p>
 
-      <p id="ej2-res" class="resultado"><!-- TODO 2 --></p>
     </section>
 
     <section id="ej3">
@@ -278,25 +290,25 @@ $total = $base + ($base * ITBMS);
 
     </section>
 
-    <section id="ej5">
-      
-<p id="ej5-monto">
-    Monto original: B/. <?php echo number_format($monto, 2); ?>
-</p>
+  <section id="ej5">
+    <h2>Ejercicio 5 · Caja de la tienda</h2>
 
-<p id="ej5-descuento">
-    Descuento aplicado: <?php echo $pct; ?>%
-</p>
+    <p id="ej5-monto">
+        Monto de compra: B/. <?php echo number_format($monto, 2); ?>
+    </p>
 
-<p id="ej5-recargo">
-    Recargo nocturno: <?php echo $recargoNoche ? "Sí" : "No"; ?>
-</p>
+    <p id="ej5-descuento">
+        Descuento aplicado: <?php echo $pct; ?>%
+    </p>
 
-<p id="ej5-total">
-    Total con ITBMS: B/. <?php echo number_format($total, 2); ?>
-</p>
+    <p id="ej5-recargo">
+        Recargo nocturno: <?php echo $recargoNoche ? "Sí" : "No"; ?>
+    </p>
 
-    </section>
+    <p id="ej5-total">
+        Total a pagar: B/. <?php echo number_format($total, 2); ?>
+    </p>
+</section>
 
   </main>
 
