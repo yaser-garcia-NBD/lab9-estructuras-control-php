@@ -27,6 +27,32 @@ $vacio = null;
 // ---------- EJERCICIO 1 · Boleto de cine (if / elseif / else) ----------
 // TODO 1
  
+const PRECIO_NINO = 3.00;
+const PRECIO_JOVEN = 4.50;
+const PRECIO_ADULTO = 7.00;
+const PRECIO_JUBILADO = 3.50;
+
+if ($edad < 12) {
+    $categoria = "Niño";
+    $precioBase = PRECIO_NINO;
+} elseif ($edad < 18) {
+    $categoria = "Joven";
+    $precioBase = PRECIO_JOVEN;
+} elseif ($edad < 60) {
+    $categoria = "Adulto";
+    $precioBase = PRECIO_ADULTO;
+} else {
+    $categoria = "Jubilado";
+    $precioBase = PRECIO_JUBILADO;
+}
+
+$esMiercoles = ($dia === 3);
+$precioFinal = $precioBase;
+
+if ($esMiercoles) {
+    $precioFinal = $precioBase * 0.50;
+}
+
 // ---------- EJERCICIO 2 · Notas (elseif, ternario, &&) ----------
 // TODO 2
  
@@ -92,7 +118,13 @@ $vacio = null;
 
     <section id="ej1">
       <h2>Ejercicio 1 · Boleto de cine</h2>
-      <p id="ej1-res"><!-- TODO 1 --></p>
+      
+<p id="ej1-res">
+    Categoría: <?php echo $categoria; ?> |
+    Precio final: B/. <?php echo number_format($precioFinal, 2); ?> |
+    Miércoles 50%: <?php echo $esMiercoles ? "Sí" : "No"; ?>
+</p>
+
     </section>
 
     <section id="ej2">
